@@ -1,4 +1,4 @@
-cd ~/YOUR_PATH/scheduler/
+cd ~/DT-FM/scheduler/
 source activate pytorch_p38
 case=$1
 rank=$2

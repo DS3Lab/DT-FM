@@ -1,4 +1,4 @@
-cd ~/YOUR_PATH
+cd ~/DT-FM
 source activate pytorch_p38
 ip=$1
 world_size=$2

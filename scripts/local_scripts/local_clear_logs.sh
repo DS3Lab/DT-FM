@@ -1,4 +1,4 @@
-cd ~/YOUR_PATH/logs
-rm ./*
-cd ~/YOUR_PATH/trace_json
+cd ~/DT-FM/logs
+rm ./*.log
+cd ~/DT-FM/trace_json
 rm ./*.json
