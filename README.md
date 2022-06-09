@@ -27,9 +27,9 @@ This is a research project developed by [DS3Lab@ETH Zurich](https://ds3lab.inf.e
 
 You can directly use our AWS AMI for easy configuration: 
 
-| AMI ID  | Region    |
-|---------|-----------|
-| ami-??? | us-west-2 |
+| AMI Name | AMI ID                | Region    | Recommended Instances                |
+|----------|-----------------------|-----------|--------------------------------------|
+| DT-FM    | ami-0652205be6faa6e2d | us-west-2 | p3.2xlarge, p3.8xlarge, p3.16xlarge  |
 
 ## Run our system:
 ### Setup:
