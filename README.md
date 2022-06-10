@@ -1,7 +1,7 @@
 # Decentralized Training of Foundation Models
 
 We explore how to deploy the training of foundation models over a heterogeneous decentralized environment. 
-This is a research project developed by [DS3Lab@ETH Zurich](https://ds3lab.inf.ethz.ch/) and [CRFM@Stanford](https://crfm.stanford.edu/).
+This is a research project developed by [DS3Lab@ETH Zurich](https://ds3lab.inf.ethz.ch/), [HazyResearch@Stanford](https://hazyresearch.stanford.edu/) and [CRFM@Stanford](https://crfm.stanford.edu/).
 
 ## Overview 
 
