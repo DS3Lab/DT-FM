@@ -51,8 +51,6 @@ delay_bandwidth_dict = {
 }
 
 nodes = 64
-send_activation_size = None  # gigabytes
-send_gradient_size = None  # gigabytes
 
 
 def simulate_0_datacenter(nodes=64):
@@ -60,11 +58,6 @@ def simulate_0_datacenter(nodes=64):
     regions = []
     for i in range(nodes):
         regions.append("instance_" + str(i // 8))
-
-    global send_activation_size
-    global send_gradient_size
-    send_activation_size = 288/1024
-    send_gradient_size = 1
 
     delay = np.zeros((nodes, nodes))
     bandwidth = np.ones((nodes, nodes)) * 3.125
@@ -89,11 +82,6 @@ def simulate_1_datacenter_spot_gpu(nodes=64, group=(8, 4)):
         else:
             regions.append("standalone")
 
-    global send_activation_size
-    global send_gradient_size
-    send_activation_size = 288/1024
-    send_gradient_size = 1
-
     delay = np.zeros((nodes, nodes))
     bandwidth = np.ones((nodes, nodes)) * 1.25
     bandwidth_blocks = [np.ones((gpu_per_instances, gpu_per_instances)) * (98.75 if i < instance_num else 0)
@@ -113,11 +101,6 @@ def simulate_2_multi_universities(nodes=64):
             regions.append("Ohio")
         else:
             regions.append("Virginia")
-
-    global send_activation_size
-    global send_gradient_size
-    send_activation_size = 288/1024
-    send_gradient_size = 1
 
     delay = np.ones((nodes, nodes))
     bandwidth = np.ones((nodes, nodes)) * 5
@@ -157,11 +140,6 @@ def simulate_3_regional_geo_distributed(nodes=64):
             regions.append("California")
         elif in_ohio(i):
             regions.append("Ohio")
-
-    global send_activation_size
-    global send_gradient_size
-    send_activation_size = 0.4
-    send_gradient_size = 0.7
 
     delay = np.ones((nodes, nodes)) * 5
     bandwidth = np.ones((nodes, nodes)) * 2
@@ -228,11 +206,6 @@ def simulate_4_worldwide_geo_distributed(nodes=64):
             else:
                 print(region1, region2)
                 assert False
-
-    global send_activation_size
-    global send_gradient_size
-    send_activation_size = 0.5
-    send_gradient_size = 0.9
 
     delay = np.ones((nodes, nodes)) * 5
     bandwidth = np.ones((nodes, nodes)) * 2

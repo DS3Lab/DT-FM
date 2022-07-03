@@ -1,7 +1,7 @@
 import random
 import numpy as np
 import config
-from scheduler.heuristic_evolutionary_solver import scheduler
+import scheduler
 
 
 def compute_random_pipeline_parallel_cost(candidate_partition=None):
@@ -9,9 +9,9 @@ def compute_random_pipeline_parallel_cost(candidate_partition=None):
     for i in range(scheduler.way - 1):
         cross_partition_cost = float('-inf')
         for j in range(scheduler.partition_size):
-            cur_cost = scheduler.peer_delay[candidate_partition[i][j], candidate_partition[i + 1][j]] / 1e3 + \
-                       config.send_activation_size * 8 / \
-                       scheduler.peer_bandwidth[candidate_partition[i]
+            cur_cost = scheduler.peer_delay[candidate_partition[i][j], candidate_partition[i+1][j]]/1e3 + \
+                scheduler.send_activation_size * 8 / \
+                scheduler.peer_bandwidth[candidate_partition[i]
                                          [j], candidate_partition[i+1][j]]
             if cross_partition_cost < cur_cost:
                 cross_partition_cost = cur_cost
